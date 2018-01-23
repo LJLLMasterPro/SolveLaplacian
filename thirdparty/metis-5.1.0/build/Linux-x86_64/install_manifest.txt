@@ -1,0 +1,8 @@
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/include/metis.h
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/lib/libmetis.so
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/gpmetis
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/ndmetis
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/mpmetis
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/m2gmetis
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/graphchk
+/home/juvigny/Cours.d/ParisVI/2017/laplacian_project/bin/cmpfillin
