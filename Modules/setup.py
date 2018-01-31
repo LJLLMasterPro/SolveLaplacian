@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+import os
+
+root = os.getcwd()
 
 def configuration(parent_package='', top_path=None):
     import numpy
@@ -26,7 +29,7 @@ def configuration(parent_package='', top_path=None):
                          sources = ['CPySplitter.cpp'],
                          extra_compile_args=['-std=c++11', '-pedantic', '-Wall', '-g'],
 		                 include_dirs=['../include'],
-                         library_dirs=['../lib'],
+                         library_dirs=[root+'/../lib'],
                          libraries=['metis'])
 
     #config.add_extension('AcaOp',
