@@ -68,8 +68,8 @@ if rank == 0 :
     VSM.view( coords, elt2verts, nbDoms, vert2dom, indInterfNodes = interfNodes, title='Partition par sommets',visuIndElts = False, visuIndVerts = False)
 
 nbVerts_loc = ndsDomain.shape[0]
-loc2glob = ndsDomain.shape[0]
-
+print "nbVerts_loc : ", nbVerts_loc
+loc2glob = ndsDomain
 # construction de glob2loc :
 glob2loc = -np.ones(nbVerts, np.long)
 iv = 0
@@ -83,14 +83,15 @@ fich.write("Numérotation glob2loc : %s\n"%repr(glob2loc))
 mask = np.zeros( nbElts, np.short)
 for ptElt in xrange(nbVerts) :
     for e in vert2elts[begVert2Elts[ptElt]:begVert2Elts[ptElt+1]] :
-        mask[e] = 1
+         mask[e] = 1
 
 nbEltsLoc = mask.nonzero()[0].shape[0]
-elt2verts_loc = np.array(nbEltsLoc, 3)
+elt2verts_loc = np.empty((nbEltsLoc, 3),np.long)
 indElt = 0
 for i in xrange(mask.shape[0]):
     if mask[i] == 1 :
         elt2verts_loc[indElt,0] = glob2loc[elt2verts[i,0]]
         elt2verts_loc[indElt,1] = glob2loc[elt2verts[i,1]]
         elt2verts_loc[indElt,2] = glob2loc[elt2verts[i,2]]
+        indElt += 1
 
