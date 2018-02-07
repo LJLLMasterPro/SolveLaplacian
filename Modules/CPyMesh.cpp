@@ -19,7 +19,7 @@ static PyObject* py_compvert2elts( PyObject* self, PyObject* args ) {
     PyArrayObject *py_elt2verts, *py_begVert2elts, *py_vert2elts;
     int            nbVerts;
     if ( !PyArg_ParseTuple( args, "O!", &PyArray_Type, &py_elt2verts ) ) return NULL;
-    int nbElts = int( PyArray_DIM( py_elt2verts, 0 ) ) - 1;
+    int nbElts = int( PyArray_DIM( py_elt2verts, 0 ) );
     // Calcul du nombre de noeuds pris en compte par elt2verts :
     std::list< long > indVerts;
     for ( int i = 0; i < nbElts; ++i ) {
